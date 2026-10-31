@@ -24,16 +24,24 @@ if (waBtn) {
   waBtn.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 }
 
-/* ============ MUSIC (no button) ============ */
+/* ============ MUSIC ============ */
 const bgMusic = document.getElementById("bgMusic");
 let musicStarted = false;
 
 function startMusic() {
   if (!bgMusic || musicStarted) return;
-  bgMusic.volume = 0.35;
-  bgMusic.play().then(() => {
-    musicStarted = true;
-  }).catch(() => {});
+  
+  bgMusic.volume = 0.35; 
+  let playPromise = bgMusic.play();
+
+  if (playPromise !== undefined) {
+    playPromise.then(() => {
+      musicStarted = true;
+      console.log("Music started successfully!");
+    }).catch((error) => {
+      console.log("Music blocked by browser: ", error);
+    });
+  }
 }
 
 function firstInteraction() {
