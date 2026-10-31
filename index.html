@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#ff0844">
+  <meta name="description" content="A special message for you ❤️">
+  <meta property="og:title" content="For You ❤️">
+  <meta property="og:description" content="Ek special message hai tere liye... kholke dekh 😉">
+  <meta property="og:image" content="https://i.postimg.cc/sf4TKwGT/866007503-1692195138996356-5773853509503336623-n.jpg">
+  <meta property="og:type" content="website">
+  <title>For You ❤️</title>
+  <link rel="stylesheet" href="h.css">
+</head>
+<body>
+
+  <!-- Music (button nahi hai) -->
+  <audio id="bgMusic" loop preload="auto">
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Mobile Portrait Warning -->
+  <div id="rotate-warning">
+    <div class="icon">🔄</div>
+    <h2>Please Rotate Your Phone</h2>
+    <p>Landscape mode mein pakdein for best experience.</p>
+  </div>
+
+  <!-- Carousel -->
+  <div class="carousel">
+    <div class="carousel-item">
+      <div class="carousel-box">
+        <div class="title">Hi 👋</div>
+        <div class="num">01</div>
+        <img src="https://i.postimg.cc/sf4TKwGT/866007503-1692195138996356-5773853509503336623-n.jpg" alt="">
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="carousel-box">
+        <div class="title">I want to tell you Something 😍</div>
+        <div class="num">02</div>
+        <img src="https://i.postimg.cc/x1MJyFcj/865098618-2219571611955834-5060169211680362755-n.jpg" alt="">
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="carousel-box">
+        <div class="title">Please Keep Dragging 😊</div>
+        <div class="num">03</div>
+        <img src="https://i.postimg.cc/pTJ0f1xd/863464660-1514047337307336-2074823657195315837-n.jpg" alt="">
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="carousel-box">
+        <div class="title">You are Amazing 🤩</div>
+        <div class="num">04</div>
+        <img src="https://i.postimg.cc/vHBPnzNr/865739076-39535019246144286-5781591528587842343-n.jpg" alt="">
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="carousel-box">
+        <div class="title">Most Beautiful Person on Earth 💯</div>
+        <div class="num">05</div>
+        <img src="https://i.postimg.cc/6q1fckmg/870061663-1100701819380653-5780735331891934804-n.jpg" alt="">
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="carousel-box">
+        <div class="title">And Cutest 🎀</div>
+        <div class="num">06</div>
+        <img src="https://i.postimg.cc/RFg7Vr4C/870110765-942593578679022-3018874176704757330-n.jpg" alt="">
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="carousel-box">
+        <div class="title">And Since I met You 😗</div>
+        <div class="num">07</div>
+        <img src="https://i.postimg.cc/cHk3GQBR/870174761-1843804199963483-942000282022363423-n.jpg" alt="">
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="carousel-box">
+        <div class="title">I feel very Lucky Everyday 😇</div>
+        <div class="num">08</div>
+        <img src="https://i.postimg.cc/rp8Rdhh8/870862989-1422545073353898-3338187734029312856-n.jpg" alt="">
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="carousel-box">
+        <div class="title">And I have Crush on You 🥰</div>
+        <div class="num">09</div>
+        <img src="https://i.postimg.cc/9f8Pc5WZ/867652086-1612914929824526-1657456772981235140-n.jpg" alt="">
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="carousel-box">
+        <div class="title">I Love You ❤️</div>
+        <div class="num">10</div>
+        <img src="https://i.postimg.cc/FztLKhwK/868220972-2229236741274504-812061343381315191-n.jpg" alt="">
+      </div>
+    </div>
+
+    <!-- Slide 11 — Heart Slider -->
+    <div class="carousel-item special-slide">
+      <div class="carousel-box">
+        <div class="title">One Last Thing... 👉</div>
+        <div class="num">11</div>
+        <div class="slider-hint">Slide the heart to unlock 💌 →</div>
+        <div class="slider-container">
+          <input type="range" min="0" max="100" value="0" class="heart-slider" id="loveSlider" oninput="checkSlider()">
+          <div class="slider-heart">💖</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hint -->
+  <div class="carousel-hint" id="carouselHint">Scroll / Drag to explore →</div>
+
+  <!-- Proposal Screen -->
+  <div id="proposal-screen">
+    <div class="content">
+      <h1>Will you be mine? 🌹</h1>
+      <div class="buttons">
+        <button class="yes-btn" onclick="sheSaidYes()">YES 🙈</button>
+        <button class="no-btn" onclick="moveNoButton(event)">NO 😤</button>
+      </div>
+    </div>
+    <div id="celebration">
+      <h1>Yayyy! I Knew It! 🥳</h1>
+      <p>Send me this good news fast!</p>
+      <a href="#" class="whatsapp-btn" id="waBtn">Send Reply on WhatsApp 💬</a>
+    </div>
+  </div>
+
+  <!-- Instagram Logo -->
+  <a href="https://www.instagram.com/shadow._.0810" target="_blank" class="logo">M</a>
+
+  <script src="a.js"></script>
+</body>
+</html>
